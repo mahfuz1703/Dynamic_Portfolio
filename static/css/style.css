@@ -713,11 +713,10 @@ h1 span {
     line-height: 32px;
 }
 .award-winner-text {
-    color: var(--11, #FF7D61);
+    color: lightgray;
     font-size: 18px;
     font-weight: 500;
     line-height: 18px;
-    text-transform: uppercase;
     padding-top: 10px;
 }
 .flip-box-back {
@@ -732,12 +731,10 @@ h1 span {
     -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
-.flip-back-text {
-    font-size: 18px;
-    color: #FFF;
-    line-height: 28px;
+.flip-back-text{
     text-align: center;
 }
+
 .flip-box:hover .flip-box-front {
     -ms-transform: rotateY(-180deg);
     -webkit-transform: rotateY(-180deg);
@@ -754,6 +751,12 @@ h1 span {
     -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
+
+/* Problem solving section */
+.problem_solving{
+    margin-top: 40px;
+}
+
 /*-----------------------[ 12.Services-section CSS ]------------------------*/
 .Services-section {
     padding: 80px 0;
@@ -842,6 +845,10 @@ h1 span {
     display: flex;
     gap: 20px;
     margin-top: 30px;
+}
+
+.portfolio-section{
+    padding-top: 55px;
 }
 .Corporate {
     color: var(--1, #FFF);
@@ -1177,6 +1184,10 @@ h1 span {
     line-height: 24px;
     margin: 30px 0;
 }
+
+.testimonials-section{
+    padding-top: 50px;
+}
 .colan-icon-img-main {
     width: 64px;
     height: 64px;
@@ -1249,7 +1260,7 @@ li.slick-active {
     margin: 30px 0;
 }
 .blog-img-section {
-    background-image: url('../images/blog-img1.png');
+    background-image: var(--profile-bg-image);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1264,12 +1275,7 @@ li.slick-active {
 .blog-img-section:hover {
     filter: blur(1px);
 }
-.blog-img-section2 {
-    background-image: url('../images/blog-img2.png');
-}
-.blog-img-section3 {
-    background-image: url('../images/blog-img3.png');
-}
+
 .blog-date {
     width: 64px;
     height: 64px;
