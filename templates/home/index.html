@@ -38,17 +38,17 @@
                         <h1 class="fade_up">{{about.name}}</h1>
                         <h2 class="designer fade_up">Back-End Developer</h2>
                         <div class="profile-media-icons-main fade_up">
-                            <a href="mailto:sayhello.mahfuz@gmail.com" class="profile-media-icons">
+                            <a href="mailto:sayhello.mahfuz@gmail.com" class="profile-media-icons" target="_blank" title="Gmail">
                                 <img src="{% static 'images/svg/email-svg.svg' %}" alt="email-svg">
                             </a>
-                            <a href="https://www.behance.net" class="profile-media-icons">
+                            <a href="https://www.behance.net" class="profile-media-icons" target="_blank" title="behance">
                                 <img src="{% static 'images/svg/behance-svg.svg' %}" alt="behance-svg">
                             </a>
-                            <a href="https://dribbble.com" class="profile-media-icons">
-                                <img src="{% static 'images/svg/drribale-svg.svg' %}" alt="drribale-svg">
+                            <a href="https://github.com/mahfuz1703" class="profile-media-icons" target="_blank" title="GitHub">
+                                <img src="{% static 'images/svg/drribale-svg.svg' %}" alt="GitHub">
                             </a>
-                            <a href="https://medium.com" class="profile-media-icons">
-                                <img src="{% static 'images/svg/medium-svg.svg' %}" alt="medium-svg">
+                            <a href="https://medium.com/@sayhello.mahfuz" class="profile-media-icons" target="_blank" title="Medium">
+                                <img src="{% static 'images/svg/medium-svg.svg' %}" alt="medium">
                             </a>
                         </div>
                     </div>
@@ -91,12 +91,12 @@
                             </li>
                             <li class="active-menu-action" id="contact-line">
                                 <a class="fade_right" href="#recommendation">
-                                    <img src="{% static 'images/svg/contact-svg.svg' %}" alt="home-svg">Recommendation
+                                    <img src="{% static 'images/svg/pricing-svg.svg' %}" alt="home-svg">Recommendation
                                 </a>
                             </li>
                             <li class="active-menu-action" id="contact-line">
                                 <a class="fade_right" href="#blog">
-                                    <img src="{% static 'images/svg/contact-svg.svg' %}" alt="home-svg">Blogs
+                                    <img src="{% static 'images/svg/blog-svg.svg' %}" alt="home-svg">Blogs
                                 </a>
                             </li>
                             <li class="active-menu-action" id="contact-line">
@@ -136,7 +136,7 @@
                                     products because they know we are the best.</p>
                                 <div class="section-one-btns-main fade_down">
                                     <div class="wrapper">
-                                        <a class="btn-hover" href="#">View Work</a>
+                                        <a class="btn-hover" href="https://github.com/mahfuz1703" target="_blank">GitHub</a>
                                     </div>
                                     <div class="wrapper">
                                         <a class="btn-hover btn-hover2" href="https://www.linkedin.com/in/mahfuz-mia/" target="_blank">LinkedIn</a>
@@ -413,6 +413,8 @@
                             <div class="line"></div>
                         </div>
                         <div class="row awards-row">
+
+                            <!-- Codeforces data fetch -->
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                 <div class="box-about flip_up">
                                     <div class="flip-box">
@@ -423,10 +425,10 @@
                                                 <p class="award-winner-text"><b>Rank: </b>{{user_info.maxRank}}</p>
                                                 <p class="award-winner-text"><b>Max Rating: </b>{{user_info.maxRating}}</p>
                                                 <p class="award-winner-text"><b>Current Rating: </b>{{user_info.rating}}</p>
+                                                <p class="award-winner-text"><b>Total Problem Solved: </b>{{totalSolved}}</p>
                                                 {% else %}
                                                 <p class="award-winner-text">User not found or API error.</p>
                                                 {% endif %}
-                                                <p class="award-winner-text"><b>Total Problem Solved: </b>{{totalSolved}}</p>
                                             </div>
                                         </div>
                                         <div class="flip-box-back">
@@ -440,6 +442,7 @@
                                 </div>
                             </div>
 
+                            <!-- Codechef data fetch -->
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                 <div class="box-about flip_up">
                                     <div class="flip-box">
@@ -466,6 +469,55 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Leetcode data fetch -->
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                <div class="box-about flip_up">
+                                    <div class="flip-box">
+                                        <div class="flip-box-front">
+                                            <div class="inner">
+                                                <p class="award-interior"><b>Leetcode</b></p>
+                                                {% if lc_user_info %}
+                                                <p class="award-winner-text"><b>Total Solve: </b>{{lc_user_info.totalSolved}}</p>
+                                                <p class="award-winner-text"><b>Easy Solve: </b>{{lc_user_info.easySolved}}</p>
+                                                <p class="award-winner-text"><b>Medium Solve: </b>{{lc_user_info.mediumSolved}}</p>
+                                                <p class="award-winner-text"><b>Hard Solve: </b>{{lc_user_info.hardSolved}}</p>
+                                                {% else %}
+                                                <p class="award-winner-text">User not found or API error.</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="inner">
+                                                <p class="flip-back-text">
+                                                    <a href="https://leetcode.com/u/mahfuzmia1703/" target="_blank" class="standing" style="text-decoration: none; color: #FF7D61; border: 2px solid #FF7D61; padding: 10px; border-radius: 10px; font-weight: bold;">Handle</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                <div class="box-about flip_up">
+                                    <div class="flip-box">
+                                        <div class="flip-box-front">
+                                            <div class="inner">
+                                                <p class="award-interior"><b>More Status</b></p>
+                                                <p class="award-winner-text"><b>1000+ ACM Problems solved and attend 50+ (online and offline) contest in different Online Judges</b></p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-box-back">
+                                            <div class="inner">
+                                                <p class="flip-back-text">
+                                                    <a href="https://github.com/mahfuz1703/Problem-Solving?tab=readme-ov-file#problem-solving-status" target="_blank" class="standing" style="text-decoration: none; color: #FF7D61; border: 2px solid #FF7D61; padding: 10px; border-radius: 10px; font-weight: bold;">More Status</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </section>
                     <!-- ====================================== Section problem solving End ===================================== -->

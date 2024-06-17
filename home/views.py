@@ -47,16 +47,19 @@ def get_cc_user_info(handle):
             }
     return None
 
-def get_cc_user_status(handle):
-    url = 'https://codeforces.com/api/user.status'
-    params = {'handle': handle}
-    response = requests.get(url, params=params)
+
+def get_lc_user_info(handle):
+    url = f'https://alfa-leetcode-api.onrender.com/userProfile/{handle}'
+    response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        if data['status'] == 'OK':
-            return data['result']
-    return []
-
+        return {
+            'totalSolved': data['totalSolved'],
+            'easySolved': data['easySolved'],
+            'mediumSolved': data['mediumSolved'],
+            'hardSolved': data['hardSolved'],
+        }
+    return None
 
 def myNameIsKhan(request):
     about = About.objects.first()
@@ -80,6 +83,10 @@ def myNameIsKhan(request):
     cc_handle = request.GET.get('handle', 'mahfuzmia1703')
     cc_user_info = get_cc_user_info(cc_handle)
 
+    # fatch leetcode user information
+    lc_handle = request.GET.get('handle', 'mahfuzmia1703')
+    lc_user_info = get_lc_user_info(lc_handle)
+
 
     totalProblemSolved = cf_totalSolved;
     current_year = datetime.datetime.now().year
@@ -93,10 +100,11 @@ def myNameIsKhan(request):
         'blogs': blogs,
 
         'user_info': cf_user_info,
-        'totalSolved': cf_totalSolved,
 
         'cc_user_info': cc_user_info,
+        'lc_user_info': lc_user_info,
         
+        'totalSolved': totalProblemSolved,
         'currentYear':current_year,
     }
     return render(request, "home/index.html", context)
