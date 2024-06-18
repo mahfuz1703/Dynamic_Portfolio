@@ -65,8 +65,8 @@ class Contest(models.Model):
 
 
 class Projects(models.Model):
-    image = models.ImageField(upload_to='projects/', default='projects/default1.png', blank=True)
-    cover = models.ImageField(upload_to='projects/', default='projects/default2.png', blank=True, null=True)
+    image = models.ImageField(upload_to='projects/', default='default.png', blank=True)
+    cover = models.ImageField(upload_to='projects/', default='default_cover.png', blank=True, null=True)
     title = models.CharField(max_length=200, blank=True)
     category = models.CharField(max_length=100, blank=True)
     created_by = models.CharField(max_length=100, blank=True)
@@ -97,8 +97,8 @@ class Blog(models.Model):
     date = models.DateField(max_length=200, blank=True)
     author = models.CharField(max_length=100, blank=True)
     topic = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(upload_to='blog/', default='blog/default.png', blank=True, null=True)
-    cover = models.ImageField(upload_to='blog/', default='blog/default.png', blank=True, null=True)
+    image = models.ImageField(upload_to='blog/', default='default.png', blank=True, null=True)
+    cover = models.ImageField(upload_to='blog/', default='default_cover.png', blank=True, null=True)
 
     def __str__(self):
         return self.title
