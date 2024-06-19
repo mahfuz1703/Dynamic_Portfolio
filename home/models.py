@@ -105,7 +105,7 @@ class Blog(models.Model):
 
 
 class Visitor(models.Model):
-    ip_address = models.GenericIPAddressField()
+    ip_address = models.GenericIPAddressField(unique=True)
     visit_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
