@@ -1,5 +1,3 @@
-# myapp/middleware.py
-
 from .models import Visitor
 
 class VisitorMiddleware:

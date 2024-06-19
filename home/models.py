@@ -1,4 +1,5 @@
 from django.db import models
+from froala_editor.fields import FroalaField
 
 # Create your models here.
 class About(models.Model):
@@ -73,7 +74,7 @@ class Projects(models.Model):
     date = models.DateField(max_length=200, blank=True)
     frontend = models.CharField(max_length=200, blank=True)
     backend = models.CharField(max_length=200, blank=True)
-    desc = models.TextField(max_length=1000, blank=True)
+    desc = FroalaField()
     source_code = models.CharField(max_length=200, blank=True)
     live_link = models.CharField(max_length=200, blank=True)
 
@@ -93,7 +94,7 @@ class Recommendation(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=200, blank=True)
     short_desc = models.CharField(max_length=300, blank=True)
-    desc = models.TextField(max_length=1000, blank=True)
+    desc = FroalaField()
     date = models.DateField(max_length=200, blank=True)
     author = models.CharField(max_length=100, blank=True)
     topic = models.CharField(max_length=100, blank=True)
