@@ -69,6 +69,7 @@ def myNameIsKhan(request):
     projects = Projects.objects.all()
     recommends = Recommendation.objects.all()
     blogs = Blog.objects.all()
+    unique_visitors = Visitor.objects.values('ip_address').distinct().count()
 
     # fetch codeforces user information
     cf_handle = request.GET.get('handle', 'Tech.Wolf')
@@ -98,6 +99,7 @@ def myNameIsKhan(request):
         'projects': projects,
         'recommends': recommends,
         'blogs': blogs,
+        'visitors': unique_visitors,
 
         'user_info': cf_user_info,
 
